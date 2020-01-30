@@ -1,0 +1,36 @@
+<!--
+  @File Name          : createAccountContainer.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : SFDCRadiants.com
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 12/24/2019, 3:04:12 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    12/24/2019   Somnath Sharma     Initial Version
+-->
+<template>
+    <lightning-card title="Create Account">
+        <p class="slds-p-horizontal_small">
+            <lightning-record-edit-form object-api-name="Account"  onsubmit={handleSubmit}
+                onsuccess={handleSuccess} onerror={handleError}>
+                <lightning-messages>
+                </lightning-messages>
+                <lightning-input-field field-name="Name">
+                </lightning-input-field>
+                <lightning-input-field field-name="AccountNumber">
+                </lightning-input-field>
+                <lightning-input-field field-name="Description">
+                </lightning-input-field>
+                <lightning-input-field field-name="Website">
+                </lightning-input-field>
+                <lightning-button class="slds-m-top_small" variant="brand" type="submit" name="Create Account"
+                    label="Create">
+                </lightning-button>
+            </lightning-record-edit-form>
+        </p>
+        <p slot="footer" style="background-color:#0F1633;color:#F4CD2F;">
+            SFDCRadiants.com
+        </p>
+    </lightning-card>
+</template>

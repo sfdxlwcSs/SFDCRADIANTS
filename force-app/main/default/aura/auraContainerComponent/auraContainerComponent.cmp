@@ -1,0 +1,32 @@
+<!-- auraDomEventListener.cmp -->
+<!--
+ * @File Name          : auraContainerComponent.js
+ * @Description        : 
+ * @Author             : Somnath Sharma
+ * @Group              : 
+ * @Last Modified By   : Somnath Sharma
+ * @Last Modified On   : 23/1/2020, 7:27:50 pm
+ * @Modification Log   : 
+ * Ver       Date            Author      		    Modification
+ * 1.0    10/15/2019   Somnath Sharma     Initial Version
+ -->
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="showModal" type="Boolean" default="false"/>
+
+    <lightning:card title="Create Account" iconName="action:new_account">
+       
+        <div class="slds-m-around_medium">
+            <lightning:layout>   
+                <lightning:layoutItem size="4">
+                       <!-- This is an LWC component 
+                    The enclosing Aura component wrapper adds a handler for the custom event. Notice that the event handler, 
+                    onflowLaunch, matches the event name with “on” prefixed to it.-->
+                <c:lwcChild onflowLaunch="{!c.handleFlowLaunch}"/> 
+                </lightning:layoutItem>    
+                <lightning:layoutItem size="8">
+                        <lightning:flow aura:id="flow" onstatuschange="{!c.statusChange}"/>  
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+    </lightning:card>
+</aura:component>

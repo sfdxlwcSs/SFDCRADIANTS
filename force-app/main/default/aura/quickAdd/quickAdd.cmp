@@ -1,0 +1,11 @@
+<aura:component implements="force:lightningQuickAction"  controller ="ProfileClass" >
+    <aura:attribute name="profileName" type="String" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+  
+    <aura:if isTrue="{!v.profileName=='System Administrator'}">
+        Profile1
+    </aura:if> 
+    <aura:if isTrue="{!v.profileName=='Analytics Cloud Integration User'}">
+        Profile2
+    </aura:if> 
+</aura:component>

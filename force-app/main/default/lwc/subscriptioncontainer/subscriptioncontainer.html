@@ -1,0 +1,76 @@
+<!--
+  @File Name          : subscriptioncontainer.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 1/8/2020, 10:58:23 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    12/17/2019   Somnath Sharma     Initial Version
+-->
+<template>
+  <template if:false={showspinner}>
+    <article class="slds-card" style="margin-bottom: 5px;">
+      <div class="slds-page-header">
+        <div class="slds-page-header__row">
+          <div class="slds-page-header__col-title">
+            <div class="slds-media">
+              <div class="slds-media__figure">
+                <lightning-icon icon-name="action:following" alternative-text="Following"></lightning-icon>
+              </div>
+              <div class="slds-media__body">
+                <div class="slds-page-header__name">
+                  <div class="slds-page-header__name-switcher">
+                    <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                      <lightning-combobox name="progress" label="What I Follow" value={value}
+                        placeholder="Select Progress" options={options} onchange={handleChange}>
+                      </lightning-combobox>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <div>
+      <template for:each={allEntityData} for:item="entityKey" for:index="index">
+        <div class="" key={entityKey.key}>
+          <div class="slds-summary-detail__title" style="margin-bottom: 5px;">
+            <div class="slds-grid header-action">
+              <div class="slds-col">
+                <span class="slds-badge" style="background: #3dcd58;
+                        color: white;"> {entityKey.key} </span>
+              </div>
+              <div class="slds-col">
+                <span class="slds-float_right">
+                  <lightning-button variant="destructive" label="UnSubscribe" title={entityKey.key}
+                    icon-name="standard:unmatched" onclick={unSubscribeChecked}>
+                  </lightning-button>
+                </span>
+              </div>
+            </div>
+            <lightning-datatable data={entityKey.value} key-field='Id' columns={_entitycolumns}
+              onrowaction={handleRowAction} title={entityKey.key}>
+            </lightning-datatable>
+          </div>
+        </div>
+      </template>
+    </div>
+    <article class="slds-card">
+      <div class="slds-page-header">
+        <div class="slds-page-header__row">
+          <div class="slds-page-header__col-title">
+          </div>
+        </div>
+      </div>
+    </article>
+  </template>
+  <template if:true={showspinner}>
+    <div class="">
+      <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </div>
+  </template>
+</template>

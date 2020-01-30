@@ -1,0 +1,10 @@
+<template>
+    <div class="slds-p-bottom_large slds-p-left_medium" >
+        <lightning-record-edit-form  object-api-name={objectpiname} onload={handleLoad}>   
+                    <lightning-input-field field-name={lookupfieldname} 
+                    value={lookupValueDefault} 
+                    onchange={handleChange}>
+                    </lightning-input-field>
+         </lightning-record-edit-form>
+    </div>           
+</template>

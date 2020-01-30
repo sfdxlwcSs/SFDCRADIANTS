@@ -1,0 +1,33 @@
+<!--
+  @File Name          : DYNAMICPATH.html
+  @Description        :
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 10/24/2019, 12:10:50 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    10/11/2019   Somnath Sharma     Initial Version
+-->
+<template>
+
+  
+    <template if:true={pickListArrayIsPopulated}>
+      <div class="slds-grid">
+        <div class="slds-tabs--path" role="application">
+          <ul class="slds-tabs--path__nav" role="tablist" style="background-color: #3dcd58;">
+            <template for:each={objectPicklist.Stages} for:item="steps" for:index="index">
+              <li class="slds-tabs--path__item " role="presentation" key={steps}>
+                <p class="slds-tabs--path__link" aria-controls="content-path-1" aria-selected="false" tabindex="-1"
+                  role="tab" aria-live="assertive">
+                  <span class="slds-tabs--path__title" style="color: white;
+                  font-weight: bolder;">{steps}</span>
+                </p>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </div>
+  
+    </template>
+  </template>
