@@ -4,7 +4,7 @@
  * @Author             : Somnath Sharma
  * @Group              : 
  * @Last Modified By   : Somnath Sharma
- * @Last Modified On   : 26/1/2020, 11:13:21 pm
+ * @Last Modified On   : 30/1/2020, 10:21:30 pm
  * @Modification Log   : 
  * Ver       Date            Author      		    Modification
  * 1.0    1/20/2020   Somnath Sharma     Initial Version
@@ -50,13 +50,13 @@ export default class DemoFilters extends LightningElement {
             window.console.log('LwcDataFromCallingAuraCmpRowsSize---->>>>>' + this.rowsData.length);
             this.setOptions(this.rowsData);
         } else {
-            this.getDataFromServer();
+            this.processConfig();
         }
     }
 
   
     /**query data from server if data is not passed from calling component */
-    getDataFromServer() {
+    processConfig() {
         //if lwcConfig is set but data is to come from picklist field
       if(this.lwcConfig.pickListFieldAPI){
         this.getPickListValues();  
