@@ -4,7 +4,7 @@
  * @Author             : Somnath Sharma
  * @Group              : 
  * @Last Modified By   : Somnath Sharma
- * @Last Modified On   : 26/1/2020, 11:01:29 pm
+ * @Last Modified On   : 30/1/2020, 10:27:25 pm
  * @Modification Log   : 
  * Ver       Date            Author      		    Modification
  * 1.0    26/1/2020   Somnath Sharma     Initial Version
@@ -23,6 +23,14 @@ connectedCallback(){
         limitClause: 0,
         pickListFieldAPI:'Type'
     };
+    // this.lwcConfig={
+    //     getDataFromServer: true,
+    //     sObjectApiName: 'Account',
+    //     whereClause: 'Type =\'Prospect\'',
+    //     orderByClause: 'ORDER BY LastModifiedDate ASC',
+    //     limitClause: 0,
+    //     pickListFieldAPI:
+    // };
 }
 
 }
