@@ -1,0 +1,23 @@
+<!--
+  @File Name          : dataBindingInLWC.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 2/5/2020, 12:31:11 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/5/2020   Somnath Sharma     Initial Version
+-->
+<template>
+    <div class="slds-m-around_medium">
+        <h1 class="slds-text-heading_small">Data Binding Example</h1>
+        <p class="slds-text-body_regular">The following examples show how LWC is designed with a one way data binding
+            approach.</p>
+        <div>
+            <lightning-input type="text" name="input1" label="Enter a name" value={name} onkeyup={updateName}>
+            </lightning-input>
+            <p style="color: crimson; text-transform: uppercase;font-weight: bolder;">My name is {name}</p>
+        </div>
+    </div>
+</template>
