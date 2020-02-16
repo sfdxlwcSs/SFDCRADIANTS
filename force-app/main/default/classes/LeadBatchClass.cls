@@ -1,19 +1,19 @@
 /**
- * @File Name          : OpportunityBatch.cls
+ * @File Name          : LeadBatchClass.cls
  * @Description        : 
  * @Author             : Somnath Sharma
  * @Group              : 
  * @Last Modified By   : Somnath Sharma
- * @Last Modified On   : 16/2/2020, 11:10:24 pm
+ * @Last Modified On   : 16/2/2020, 11:11:39 pm
  * @Modification Log   : 
  * Ver       Date            Author      		    Modification
  * 1.0    16/2/2020   Somnath Sharma     Initial Version
 **/
-global class OpportunityBatch implements Database.Batchable<Sobject>{
+global class LeadBatchClass implements Database.Batchable<Sobject>{
  
     //Method to get the data to be proceesed  
     global database.Querylocator Start(Database.BatchableContext bc){
-        String query = 'Select Id, Name From Opportunity';
+        String query = 'Select Id, Name,Active__c,CreatedDate From Lead where Active__c=true';
         return Database.getQueryLocator(query);
     }
  
