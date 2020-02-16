@@ -30,7 +30,7 @@ global class LeadBatchClass implements Database.Batchable<Sobject>{
  
     //Method to be called after the excute
     global void finish(Database.BatchableContext bc){
-        //Add your start code for the other batch job here
-       // Database.executeBatch(new Batch2());
+       AsyncApexJob job = [SELECT Id, Status FROM AsyncApexJob WHERE Id = :bc.getJobId()]; 
+          System.debug('>>>> finish ' + job.Status);
     }
 }
