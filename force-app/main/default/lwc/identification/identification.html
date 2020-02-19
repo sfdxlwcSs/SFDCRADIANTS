@@ -1,0 +1,26 @@
+<!--
+  @File Name          : identification.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 2/17/2020, 10:19:21 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/17/2020   Somnath Sharma     Initial Version
+-->
+<template>
+    <div>
+        <lightning-button label="Get Elements" onclick={getElements}></lightning-button>
+    </div>
+    <div id="first"> First div</div>
+    <div id="second" data-second=""> Second div</div>
+    <div data-child2="">Child2 outer</div>
+    <div data-parent="">
+        <div data-child1="">Child1 Inner</div>
+        <div data-child2="">Child2 Inner</div>
+    </div>
+    <div data-id="first">data-id-first div</div>
+    <div data-id="second">data-id-second div</div>
+
+</template>

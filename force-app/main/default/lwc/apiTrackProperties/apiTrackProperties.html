@@ -1,0 +1,28 @@
+<!--
+  @File Name          : apiTrackProperties.html
+  @Description        : 
+  @Author             : Sasank Subrahmanyam V
+  @Group              : 
+  @Last Modified By   : Sasank Subrahmanyam V
+  @Last Modified On   : 2/19/2020, 10:32:20 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    12/11/2019   Sasank Subrahmanyam V     Initial Version
+-->
+<template>
+    <div style="font-size: large;">Parent</div>
+    <div>
+        <lightning-button label="Log Tracked String" onclick={logTrackedString}></lightning-button>
+        <lightning-button label="Log Tracked Object" onclick={logTrackedObject}></lightning-button>
+        <lightning-button label="Modify Tracked Object" onclick={modifyTrackedObject}></lightning-button>
+        <lightning-button label="Log Tracked Array" onclick={logTrackedArray}></lightning-button>
+    </div>
+    <hr>
+    <div>
+        <c-api-track-properties-child public-array={trackedArray}
+                                      public-object={trackedObject}
+                                      public-string={trackedString}
+                                      public-boolean-prop>
+        </c-api-track-properties-child>
+    </div>
+</template>

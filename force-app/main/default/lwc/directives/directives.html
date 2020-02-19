@@ -1,0 +1,33 @@
+<!--
+  @File Name          : directives.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 2/19/2020, 9:56:38 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/19/2020   Somnath Sharma     Initial Version
+-->
+<template>
+    <lightning-card title="HelloIterator" icon-name="custom:custom14">
+        <ul class="slds-m-around_medium">
+            <template iterator:it={contacts}>
+                <li key={it.value.Id}>
+                    <div if:true={it.first} class="list-first"></div>
+                    {it.value.Name}, {it.value.Title}
+                    <div if:true={it.last} class="list-last"></div>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+
+    <h1 style="font-size:20px">lwc:dom="manual"</h1>
+    <p>Add this directive to a native HTML element to call appendChild() on the element from the owner’s JavaScript
+        class and
+        preserve styling.</p>
+    <lightning-button label="Test Dom" onclick={testDom}></lightning-button>
+    <div data-test-dom></div>
+    <lightning-button label="Test Dom Manual" onclick={testDomManual}></lightning-button>
+    <div data-dom-manual lwc:dom="manual"></div>
+</template>

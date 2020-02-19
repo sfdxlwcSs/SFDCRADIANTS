@@ -1,0 +1,19 @@
+<!-- @File Name          : containerAuraComponent.cmp
+ @Description        : 
+ @Author             : Somnath Sharma
+ @Group              : 
+ @Last Modified By   : Somnath Sharma
+ @Last Modified On   : 2/18/2020, 9:45:01 AM
+ @Modification Log   : 
+ Ver       Date            Author      		    Modification
+ 1.0    2/18/2020   Somnath Sharma     Initial Version -->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global">
+    <div>
+        <b style="font-size:15px">I am parent Aura .I will force my style on you.Even you LWC.</b>
+    </div>
+    <div style="background:red;margin:5px">
+        child lwc component  called.
+        <c:styling />
+    </div>
+</aura:component>

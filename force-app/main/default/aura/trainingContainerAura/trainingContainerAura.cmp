@@ -1,0 +1,15 @@
+<!-- @File Name          : trainingContainerAura.cmp
+ @Description        : 
+ @Author             : Somnath Sharma
+ @Group              : 
+ @Last Modified By   : Somnath Sharma
+ @Last Modified On   : 2/17/2020, 9:47:32 AM
+ @Modification Log   : 
+ Ver       Date            Author      		    Modification
+ 1.0    2/17/2020   Somnath Sharma     Initial Version -->
+
+<aura:component implements="lightning:isUrlAddressable">
+
+    <lightning:card title="Aura Hello World" iconName="custom:custom30" />
+    <c:trainingComponent />
+</aura:component>

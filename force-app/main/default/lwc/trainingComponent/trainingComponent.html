@@ -1,0 +1,37 @@
+<!--
+  @File Name          : trainingComponent.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 2/17/2020, 11:32:38 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/17/2020   Somnath Sharma     Initial Version
+-->
+<template>
+    <lightning-card title="HelloConditionalRendering" icon-name="custom:custom14">
+        <table>
+
+            <tbody>
+                <template for:each={data} for:item="contact">
+                    <tr key={contact.pop}>
+                        <th> {contact.country}</th>
+                        <th>{contact.pop}</th>
+
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <!-- use of if true -->
+        <div class="slds-m-around_x-small">
+            <lightning-button label="Show India Population" onclick={showIndiaPopulation}>
+            </lightning-button>
+        </div>
+        <template for:each={data} for:item="dt">
+            <li if:true={dt.IsIndia} key={dt.pop}>
+                {dt.pop}
+            </li>
+        </template>
+    </lightning-card>
+</template>

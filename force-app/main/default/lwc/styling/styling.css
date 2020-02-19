@@ -1,0 +1,15 @@
+.design-token {
+    background: var(--lwc-brandAccessible);
+    padding-left: var(--lwc-spacingLarge);
+    font-weight: 600;
+    color: brown;
+}
+
+.custom-style {
+    background: blue;
+    color: white;
+}
+
+h1 {
+    font-size: xx-large;
+}
