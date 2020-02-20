@@ -1,20 +1,23 @@
 <!--
-  @File Name          : demoFilters.html
+  @File Name          : tableHeadFilter.html
   @Description        : 
   @Author             : Somnath Sharma
   @Group              : 
   @Last Modified By   : Somnath Sharma
-  @Last Modified On   : 26/1/2020, 6:56:50 pm
+  @Last Modified On   : 20/2/2020, 11:01:32 pm
   @Modification Log   : 
   Ver       Date            Author      		    Modification
-  1.0    1/20/2020   Somnath Sharma     Initial Version
+ 1.0    1/20/2020   Somnath Sharma     Initial Version
 -->
 <template>
-    <template if:true={areDetailsVisible}>
-    <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
-        <lightning-combobox name="progress" label={comboBoxLabel} value={value} placeholder={placeholderValue}
-            options={options} onchange={handleChange} dropdown-alignment={dropdownAlignmentValue}>
-        </lightning-combobox>
-    </div>
-</template>
+    <template if:true={renderComboBox}>
+        <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+            <lightning-combobox name="progress" label={comboBoxLabel} value={value} placeholder={placeholderValue}
+                options={options} onchange={handleChange} dropdown-alignment={dropdownAlignmentValue}>
+            </lightning-combobox>
+        </div>
+    </template>
+    <template if:false={renderComboBox}>
+        {comboBoxLabel}
+    </template>
 </template>
