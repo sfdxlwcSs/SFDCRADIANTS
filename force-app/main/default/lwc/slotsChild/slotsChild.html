@@ -1,0 +1,21 @@
+<!--
+  @File Name          : slotsChild.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 2/20/2020, 10:23:51 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/20/2020   Somnath Sharma     Initial Version
+-->
+<template>
+    <div>Child Component</div>
+    <b>
+        <slot onslotchange={handleUnnamedSlot}>This is default unnamed slot</slot>
+    </b>
+    <div class="slds-box slds-theme_error">
+        <slot name="error" onslotchange={handleNamedSlot}>default error</slot>
+    </div>
+
+</template>

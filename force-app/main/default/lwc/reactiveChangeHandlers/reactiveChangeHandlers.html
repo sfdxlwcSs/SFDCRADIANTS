@@ -1,0 +1,19 @@
+<!--
+  @File Name          : reactiveChangeHandlers.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 2/20/2020, 9:50:51 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/20/2020   Somnath Sharma     Initial Version
+-->
+<template>
+    <lightning-button label="Modify tracked Array" onclick={modifyTrackedArray}></lightning-button>
+    <div>Parent Div</div>
+    <ul for:each={trackedArray} for:item="item" key={item.name} class="slds-list-dotted">
+        <li>{item.name}</li>
+    </ul>
+    <c-reactive-change-handler-child public-array={trackedArray}></c-reactive-change-handler-child>
+</template>
