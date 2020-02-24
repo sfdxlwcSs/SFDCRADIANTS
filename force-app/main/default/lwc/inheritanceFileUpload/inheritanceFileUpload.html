@@ -1,0 +1,19 @@
+<!--
+  @File Name          : inheritanceFileUpload.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 2/24/2020, 10:18:56 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/24/2020   Somnath Sharma     Initial Version
+-->
+<template>
+    <div>
+        Id: {recordId}
+    </div>
+    <lightning-file-upload label="Upload" name="fileUploader" accept={acceptedFormats} record-id={recordId}
+        onuploadfinished={handleUploadFinished}>
+    </lightning-file-upload>
+</template>

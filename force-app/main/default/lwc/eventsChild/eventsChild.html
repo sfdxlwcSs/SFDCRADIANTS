@@ -1,0 +1,19 @@
+<!--
+  @File Name          : eventsChild.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 2/24/2020, 11:38:49 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/24/2020   Somnath Sharma     Initial Version
+-->
+<template>
+    <lightning-button label="Send Info To Parent Object Data" onclick={sendInfo}></lightning-button>
+    <lightning-button label="Send Simple Data" onclick={fireEventWithData}></lightning-button>
+    <lightning-button label="Bubbles As True" onclick={fireEventWithDataBubbles}></lightning-button>
+
+    <h2>GrandChild Event Concept</h2>
+    <c-events-grand-child onmyevent={handleMyEvent}></c-events-grand-child>
+</template>

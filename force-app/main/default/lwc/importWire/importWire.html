@@ -1,0 +1,46 @@
+<!--
+  @File Name          : importWire.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 2/21/2020, 11:33:11 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/21/2020   Somnath Sharma     Initial Version
+-->
+<template>
+    <lightning-card title="ApexWireMethodNotCached" icon-name="custom:custom63">
+        <div if:true={accountsCached.data} class="slds-m-around_medium">
+
+            <template for:each={accountsCached.data} for:item="acc">
+                <p key={acc.Id}>{acc.Name}</p>
+            </template>
+
+        </div>
+        <div class="slds-text-color_destructive" if:true={accountsCached.error}>
+            {errorMessage}
+        </div>
+    </lightning-card>
+    <lightning-pill label="Contacts Wired"></lightning-pill>
+    <lightning-button label="Refresh" onclick={refresh}></lightning-button>
+    <ul if:true={contacts} for:each={contacts} for:item="con" key={con.Id}>
+        <li>{con.Name}</li>
+    </ul>
+    <lightning-card title="ApexWireMethodWithParams" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+
+            <p>Default Search param -<b>{searchKey}</b></p>
+            <lightning-input data-search type="search" onchange={handleKeyChange} class="slds-m-bottom_small"
+                label="Search" value={searchKey}></lightning-input>
+            <template if:true={contactsSearch}>
+                <template for:each={contactsSearch} for:item="contact">
+                    <li key={contact.Id}>{contact.Name}</li>
+                </template>
+            </template>
+            <template if:true={errorSearch}>
+                {errorSearch.error.body.message}
+            </template>
+        </div>
+    </lightning-card>
+</template>
