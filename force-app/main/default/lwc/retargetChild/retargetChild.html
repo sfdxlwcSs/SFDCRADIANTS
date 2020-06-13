@@ -1,0 +1,16 @@
+<!--
+  @File Name          : retargetChild.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 2/25/2020, 9:49:02 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/25/2020   Somnath Sharma     Initial Version
+-->
+<template>
+    <lightning-button label="Fire Event From Child" onclick={fireEvent}></lightning-button>
+    <c-retarget-grand-child onmyevent={handleMyEvent}></c-retarget-grand-child>
+
+</template>

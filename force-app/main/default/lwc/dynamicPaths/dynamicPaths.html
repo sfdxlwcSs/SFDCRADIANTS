@@ -4,24 +4,24 @@
   @Author             : Somnath Sharma
   @Group              : 
   @Last Modified By   : Somnath Sharma
-  @Last Modified On   : 10/24/2019, 12:10:50 PM
+  @Last Modified On   : 27/2/2020, 7:34:33 pm
   @Modification Log   : 
   Ver       Date            Author      		    Modification
   1.0    10/11/2019   Somnath Sharma     Initial Version
 -->
 <template>
-
+  {activeStage}
   
-    <template if:true={pickListArrayIsPopulated}>
-      <div class="slds-grid">
+   
+      <div class="slds-grid" >
         <div class="slds-tabs--path" role="application">
-          <ul class="slds-tabs--path__nav" role="tablist" style="background-color: #3dcd58;">
-            <template for:each={objectPicklist.Stages} for:item="steps" for:index="index">
-              <li class="slds-tabs--path__item " role="presentation" key={steps}>
+          <ul class="slds-tabs--path__nav" role="tablist" >
+            <template for:each={objectPicklist} for:item="steps" for:index="index">
+              <li class={steps.stageBackGround}  role="presentation" key={steps.StageName}>
                 <p class="slds-tabs--path__link" aria-controls="content-path-1" aria-selected="false" tabindex="-1"
                   role="tab" aria-live="assertive">
                   <span class="slds-tabs--path__title" style="color: white;
-                  font-weight: bolder;">{steps}</span>
+                  font-weight: bolder;">{steps.StageName}</span>
                 </p>
               </li>
             </template>
@@ -29,5 +29,4 @@
         </div>
       </div>
   
-    </template>
   </template>

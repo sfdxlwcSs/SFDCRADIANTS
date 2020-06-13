@@ -3,17 +3,19 @@
  @Author             : Somnath Sharma
  @Group              : 
  @Last Modified By   : Somnath Sharma
- @Last Modified On   : 2/18/2020, 9:45:01 AM
+ @Last Modified On   : 23/4/2020, 7:13:46 pm
  @Modification Log   : 
  Ver       Date            Author      		    Modification
  1.0    2/18/2020   Somnath Sharma     Initial Version -->
 
 <aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global">
-    <div>
+    <!-- <div>
         <b style="font-size:15px">I am parent Aura .I will force my style on you.Even you LWC.</b>
     </div>
     <div style="background:red;margin:5px">
         child lwc component  called.
         <c:styling />
-    </div>
+    </div> -->
+    <!-- <c:fspoLineCreation></c:fspoLineCreation> -->
+    <c:navigateToTab></c:navigateToTab>
 </aura:component>

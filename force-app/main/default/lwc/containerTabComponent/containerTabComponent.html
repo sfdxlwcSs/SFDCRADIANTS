@@ -1,0 +1,64 @@
+<!--
+  @File Name          : containerTabComponent.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 3/6/2020, 2:32:23 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/25/2020   Somnath Sharma     Initial Version
+-->
+<template>
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title slds-text-heading_large slds-text-align_center ">
+                {pageHeader}
+            </div>
+        </div>
+    </div>
+    <div class="slds-box slds-text-align_center slds-p-top_xx-small slds-m-top_xx-small">
+        <c-poc-picklist-filters objectapiname="Account" picklistfield="Account.Industry"></c-poc-picklist-filters>
+    </div>
+    <div class="slds-box slds-text-align_center slds-p-top_xx-small slds-m-top_xx-small">
+        <div class="slds-page-header slds-page-header__col-title" style="font-size: large;
+            font-weight: bold;font-style: italic;">Combo Box Query data from Server</div>
+        <c-dynamic-filters-based-on-combo-box lwc-config={lwcConfig}></c-dynamic-filters-based-on-combo-box>
+    </div>
+
+    <div class="slds-box slds-text-align_center slds-p-top_xx-small slds-m-top_xx-small">
+        <div class="slds-page-header slds-page-header__col-title" style="font-size: large;
+            font-weight: bold;font-style: italic;">Data Injection To comboBox</div>
+        <c-dynamic-filters-based-on-combo-box rowsdata={_dataInjection}></c-dynamic-filters-based-on-combo-box>
+    </div>
+
+    <div class="slds-box slds-text-align_center slds-p-top_xx-small slds-m-bottom_x-large">
+        <div class="slds-page-header slds-page-header__col-title" style="font-size: large;
+            font-weight: bold;font-style: italic;">wire adapter to get the picklist values for a specified field.</div>
+        <c-dynamic-filters-based-on-combo-box objectapiname="Account" picklistfield="Account.Industry">
+        </c-dynamic-filters-based-on-combo-box>
+    </div>
+    <div class="slds-m-bottom_x-large">
+        <h2 style="font-weight: bold;
+    font-size: 15px;
+    color: red;">Custom Error mesage Record Edit Form Using Validation Rule And conditional rendering of fields</h2>
+        <lightning-record-edit-form object-api-name="Contact">
+            <lightning-messages>
+            </lightning-messages>
+            <lightning-input-field field-name="Name">
+            </lightning-input-field>
+            <lightning-input-field field-name="Level__c" onchange={handleLevelEvent}>
+            </lightning-input-field>
+            <lightning-input-field field-name="LeadSource" onchange={handleSourceEvent}>
+            </lightning-input-field>
+            <template if:true={renderOptionalField}>
+                <lightning-input-field field-name="Phone">
+                </lightning-input-field>
+            </template>
+            <lightning-input-field field-name="Email">
+            </lightning-input-field>
+            <lightning-button class="slds-m-top_small" type="submit" label="Create new">
+            </lightning-button>
+        </lightning-record-edit-form>
+    </div>
+</template>

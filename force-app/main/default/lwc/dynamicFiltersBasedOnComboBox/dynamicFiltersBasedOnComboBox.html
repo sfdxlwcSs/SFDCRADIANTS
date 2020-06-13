@@ -1,0 +1,21 @@
+<!--
+  @File Name          : dynamicFiltersBasedOnComboBox.html
+  @Description        : 
+  @Author             : Somnath Sharma
+  @Group              : 
+  @Last Modified By   : Somnath Sharma
+  @Last Modified On   : 2/25/2020, 9:33:55 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/25/2020   Somnath Sharma     Initial Version
+-->
+<template>
+    <div class="slds-dropdown-trigger slds-dropdown-trigger_click" if:true={renderComboBox}>
+        <lightning-combobox name="progress" label={comboBoxLabel} value={value} placeholder={placeholderValue}
+            options={options} onchange={handleChange} dropdown-alignment={dropdownAlignmentValue}>
+        </lightning-combobox>
+    </div>
+    <div if:false={renderComboBox}>
+        {comboBoxLabel}
+    </div>
+</template>
