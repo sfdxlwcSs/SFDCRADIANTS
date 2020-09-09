@@ -1,0 +1,14 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+ <apex:form >
+        <apex:pageblock >
+            <apex:outputtext value="{!$Label.dynamicLabelsVf}">
+            <apex:param value="X"/>
+            <apex:param value="Y"/>
+            <apex:param value="Z"/>
+            </apex:outputtext>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

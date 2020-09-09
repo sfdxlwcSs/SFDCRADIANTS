@@ -1,0 +1,28 @@
+{
+  "name": "JavaScriptSetup",
+  "version": "1.0.0",
+  "description": "This guide helps Salesforce developers who are new to Visual Studio Code go from zero to a deployed app using Salesforce Extensions for VS Code and Salesforce CLI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfdxlwcSs/SFDCRADIANTS.git"
+  },
+  "keywords": [],
+  "author": "Somnath Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sfdxlwcSs/SFDCRADIANTS/issues"
+  },
+  "homepage": "https://github.com/sfdxlwcSs/SFDCRADIANTS#readme",
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
+  }
+}
