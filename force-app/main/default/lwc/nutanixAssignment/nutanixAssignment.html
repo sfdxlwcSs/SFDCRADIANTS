@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : Somnath Sharma
+  @group             : 
+  @last modified on  : 11-19-2021
+  @last modified by  : Somnath Sharma
+-->
+<template>
+    <p>NUTANIX ASSIGNMENT.</p>
+<div class="c-container">
+    <lightning-layout>
+        <lightning-layout-item padding="around-small" flexibility="auto">
+            <div class="slds-var-p-around_medium lgc-bg">
+                <lightning-input type="text" label="Enter some text" placeholder="Search movie with movie title" onchange={handleInputChange}></lightning-input>
+            </div>
+         
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" flexibility="auto">
+            <lightning-button variant="brand" label="Fetch Response" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        </lightning-layout-item>
+     
+    </lightning-layout>
+  
+    <lightning-layout>
+        <lightning-layout-item padding="around-small" flexibility="auto">
+           
+            <img src={_apiresponse.Poster}/>
+            </lightning-layout-item>
+            </lightning-layout>
+ 
+
+</div>
+</template>

@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : Somnath Sharma
+  @group             : 
+  @last modified on  : 20-11-2020
+  @last modified by  : Somnath Sharma
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   19-11-2020   Somnath Sharma   Initial Version
+-->
+<template>
+  <input value={message}></input>
+  <div if:false={ready}>
+    <div class="exampleHolder">
+      <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </div>
+  </div>
+  <div if:true={ready}>
+    <div>Name: {name}</div>
+    <div>Description: {description}</div>
+    <div>Category: {category}</div>
+    <div>Material: {material}</div>
+    <div>Price: {price}</div>
+
+  </div>
+  <div class="slds-grid slds-wrap">
+    <div class="slds-size_1-of-6">
+      <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+        <img src={pictureUrl} />
+      </div>
+    </div>
+  </div>
+</template>

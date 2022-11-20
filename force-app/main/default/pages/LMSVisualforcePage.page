@@ -1,0 +1,62 @@
+<!--
+  @description       : 
+  @author            : Somnath Sharma
+  @group             : 
+  @last modified on  : 16-12-2020
+  @last modified by  : Somnath Sharma
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   16-12-2020   Somnath Sharma   Initial Version
+-->
+<apex:page >
+
+    <div>
+        <p>Enter Your Message Here:</p>
+        <input type="text" id="theMessage" />
+        <button onclick="publishMC()"> Publish Msg</button>
+        <br/>
+        <br/>
+        <button onclick="subscribeMC()">Subscribe</button>
+        <button onclick="unsubscribeMC()">Unsubscribe</button>
+        <br/>
+        <br/>
+        <p>Received message:</p>
+        <label id="MCMessageText" />
+    </div>
+
+    <script>
+
+        // Load the MessageChannel token in a variable
+        var SAMPLEMC = "{!$MessageChannel.MyMessageChannel__c}";
+        var subscriptionToMC;
+
+        function publishMC() {
+            const message = {
+                messageToSend: document.getElementById('theMessage').value,
+                sourceSystem: "From VisualForce Page"
+            };
+            sforce.one.publish(SAMPLEMC, message);
+        }
+
+        // Display message in the textarea field
+        function displayMessage(message) {
+            var textLabel = document.querySelector("#MCMessageText");
+            textLabel.innerHTML = message ? JSON.stringify(message, null, '\t') : 'no message payload';
+        }
+
+        function subscribeMC() {
+            if (!subscriptionToMC) {
+                subscriptionToMC = sforce.one.subscribe(SAMPLEMC, displayMessage);
+            }
+        }
+
+        function unsubscribeMC() {
+            if (subscriptionToMC) {
+                sforce.one.unsubscribe(subscriptionToMC);
+                subscriptionToMC = null;
+            }
+        }
+
+    </script>
+
+</apex:page>

@@ -1,0 +1,30 @@
+<!--
+  @description       : 
+  @author            : Somnath Sharma
+  @group             : 
+  @last modified on  : 20-01-2021
+  @last modified by  : Somnath Sharma
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   19-01-2021   Somnath Sharma   Initial Version
+-->
+<apex:page >
+
+  <apex:includeLightning />
+  <div id="lightningvf" />
+  <script>
+    //Reference a Standalone Aura Dependency App-LtngApp
+    $Lightning.use("c:LtngApp", function () {
+      $Lightning.createComponent("c:calledLWCComponent",
+        {
+          //API property
+          recordId: "0032v00002nmbzhAAA"
+        },
+        "lightningvf",
+        function (cmp) {
+          // do some stuff
+        }
+      );
+    });
+  </script>
+</apex:page>

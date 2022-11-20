@@ -1,0 +1,39 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-05-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <aura:attribute type="String" name="ltngCurrencyCode"/> 
+    <div style="background-color:#E6E6FA;border-style: solid;margin:5%;padding:2%;">
+        <b>Getting User Locale Information in Lightning Component Markup-Aura</b> 
+        <table>
+        	<tr>
+            	<td>Country</td><td>{!$Locale.country}</td>
+            </tr>
+            <tr>
+            	<td>Timezone</td><td>{!$Locale.timezone}</td>
+            </tr>
+            <tr>
+            	<td>Currency</td><td>{!$Locale.currency}</td>
+            </tr>
+            <tr>
+            	<td>Long Date Format</td><td>{!$Locale.longDateFormat}</td>
+            </tr>
+        </table>
+    </div>
+    
+   
+    <div style="background-color:#E6E6FA;border-style: solid;margin:5%;padding:2%;">
+    	<b>Getting User Locale Information from Controller.js</b> 
+        <table>
+        	<tr>
+            	<td>Currency Code</td><td>{!v.ltngCurrencyCode}</td>
+            </tr>
+        </table>
+    </div>
+
+</aura:component>

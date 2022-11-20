@@ -1,0 +1,34 @@
+<!--
+  @description       : 
+  @author            : Somnath Sharma
+  @group             : 
+  @last modified on  : 18-02-2022
+  @last modified by  : Somnath Sharma
+-->
+<template>
+    <lightning-card title="SuccesscFactor Data" icon-name="custom:custom63">
+        <div class="slds-var-m-around_medium">
+            <template if:true={userdata}>
+                <b style="color: green;font-family: fantasy;font-variant-caps: revert;">Time Taken For Response:{timeTakenForAPICall}</b>
+            <ul>
+                <template for:each={userdata.d.results} for:item="todoData" for:index="index">
+                    <li key={todoData.Id}><b>{index}</b></br> {todoData.todoEntryName}  </li>
+                    <li key={todoData.Id} style="color: cadetblue;font-weight:bold">Category: {todoData.categoryId}  </li>
+                    <li key={todoData.Id}  if:true={todoData.ShowDeepLink}>
+                        <b style="color: red;font-style:italic; text-decoration: underline;">Subject: {todoData.wfRequestNav.wfRequestUINav.todoSubjectLine}</b>
+                    </li>
+                    <li style="color:orange;" key={todoData.Id}  if:false={todoData.ShowDeepLink}>
+                        {todoData.subjectId}
+                    </li>
+                </template>
+</ul>
+</template>
+<template if:true={error}>
+               <b style="
+               font-size: larger;
+               color: brown;
+           ">{error}</b>
+            </template>
+</div>
+</lightning-card>
+</template>

@@ -1,0 +1,18 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes" controller="ContentController"  access="global" >
+    <aura:attribute name="appdata" type="object" description="Stores records displayed in the data table"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+     <aura:attribute name="mycolumns" type="List"/>
+    <aura:attribute
+    name="renderApplicationData"
+    type="Boolean"
+    access="global"
+    default="false"
+  />
+      <aura:if isTrue="{!v.renderApplicationData}">
+    <lightning:datatable data="{! v.appdata }"
+                         columns="{! v.mycolumns }"
+                         keyField="id"
+                         hideCheckboxColumn="true"/>
+    
+  </aura:if> 
+</aura:component>

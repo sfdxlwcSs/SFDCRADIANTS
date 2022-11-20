@@ -18,7 +18,7 @@
         if (event.getParam('status') === "FINISHED") {
            
             var outputVariables = event.getParam("outputVariables");
-            window.console.log('flow data',JSON.stringify(outputVariables) );
+            console.log('flow data',JSON.stringify(outputVariables) );
             for(var i = 0; i < outputVariables.length; i++) {
                var outputVar = outputVariables[i];
                 if(outputVar.name === "accInfoCreated") {

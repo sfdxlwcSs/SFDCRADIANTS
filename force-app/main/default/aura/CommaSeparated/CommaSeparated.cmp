@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+     <aura:attribute name="appData" type="String[]" 
+                  />
+    
+    <aura:iteration items="{!v.appData}" var="type">
+        <!-- Everything in between these iteration tags is created for each list element. -->
+        <p>{!type}</p>
+    </aura:iteration>
+    <lightning:formattedUrl 
+        value="https://salesforce.com"
+        label="Visit salesforce.com"
+        target="_blank" />
+    
+     <lightning:button variant="base" label="tt"   name="buttonname1" title="gg" onclick="{! c.handleRowAction}" />
+</aura:component>

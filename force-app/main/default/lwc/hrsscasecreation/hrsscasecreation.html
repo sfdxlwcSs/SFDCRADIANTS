@@ -1,0 +1,53 @@
+<template>
+    <lightning-record-edit-form object-api-name="Case"  record-type-id={recordTypeId}
+     onsuccess='{handleSuccess}' onsubmit='{handleSubmit}'>
+        <lightning-messages></lightning-messages>
+        
+      
+            <lightning-layout horizontal-align="space">
+                <lightning-layout-item padding="around-small">
+                    <lightning-input-field field-name="Status"></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <lightning-input-field field-name="ContactId"></lightning-input-field>
+                </lightning-layout-item>
+                
+            </lightning-layout>
+            <lightning-layout horizontal-align="space">
+                <lightning-layout-item padding="around-small">
+                    <lightning-input-field field-name="Priority"></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <lightning-input-field field-name="Origin"></lightning-input-field>
+                </lightning-layout-item>
+                </lightning-layout>
+                
+                <lightning-layout horizontal-align="space">
+                    <lightning-layout-item padding="around-small">
+                        <lightning-input-field field-name="Type"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small">
+                        <lightning-input-field field-name="Description"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small">
+                        <lightning-input-field field-name="Subject"></lightning-input-field>
+                    </lightning-layout-item>
+                    </lightning-layout>
+                <lightning-layout horizontal-align="space">
+                   
+                    <lightning-layout-item padding="around-small">
+                        <div class="slds-m-top_medium">
+                            <lightning-button
+                                variant="brand"
+                                type="submit"
+                                name="save"
+                                label="Submit"
+                            >
+                            </lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                    </lightning-layout>
+       
+       
+    </lightning-record-edit-form>  
+</template>

@@ -4,7 +4,7 @@
  * @Author             : Somnath Sharma
  * @Group              : 
  * @Last Modified By   : Somnath Sharma
- * @Last Modified On   : 2/18/2020, 11:14:37 AM
+ * @Last Modified On   : 16-11-2022
  * @Modification Log   : 
  * Ver       Date            Author      		    Modification
  * 1.0    2/18/2020   Somnath Sharma     Initial Version
@@ -21,6 +21,8 @@ export default class LifeCycleHooksRenderCallBack extends LightningElement {
     @track renderComp;
 
     render() {
+        //https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_render
+        //The returned value from the render() method must be a template reference, which is the imported default export from an HTML file.
         if (this.renderComp === 1) return render1;
         else if (this.renderComp === 2) return render2;
         return lifecycleHookRender;

@@ -1,0 +1,38 @@
+<!--
+  @description       : 
+  @author            : Somnath Sharma
+  @group             : 
+  @last modified on  : 28-09-2022
+  @last modified by  : Somnath Sharma
+  Modifications Log 
+  Ver   Date         Author           Modification
+  1.0   08-06-2021   Somnath Sharma   Initial Version
+-->
+<template>
+
+  <lightning-card title="Current Logged User Information">
+    <template if:true={objUser}>
+      <dl class="slds-list_horizontal slds-wrap" style="margin-left: 3%;">
+        <dt class="slds-item_label slds-truncate" title="First Name">Role:</dt>
+        <dd class="slds-item_detail slds-truncate"><b>{objUser.Role}</b></dd>
+        <dt class="slds-item_label slds-truncate" title="First Name">First Name:</dt>
+        <dd class="slds-item_detail slds-truncate"><b>{objUser.FirstName}</b></dd>
+        <dt class="slds-item_label slds-truncate" title="Last Name">Last Name:</dt>
+        <dd class="slds-item_detail slds-truncate"><b>{objUser.LastName}</b></dd>
+        <dt class="slds-item_label slds-truncate" title="Full Name">Name:</dt>
+        <dd class="slds-item_detail slds-truncate"><b>{objUser.Name}</b></dd>
+        <dt class="slds-item_label slds-truncate" title="Email">Email:</dt>
+        <dd class="slds-item_detail slds-truncate">
+          <p><a href={objUser.Email}>Send email</a></p>
+        </dd>
+        <dt class="slds-item_label slds-truncate" title="Active">Is Active:</dt>
+        <dd class="slds-item_detail slds-truncate">
+          <lightning-input type="checkbox" label="Active" name="Is Active" disabled checked={objUser.IsActive}>
+          </lightning-input>
+        </dd>
+        <dt class="slds-item_label slds-truncate" title="Profile">Profile:</dt>
+        <dd class="slds-item_detail slds-truncate"><b>{objUser.Profile}</b></dd>
+      </dl>
+    </template>
+  </lightning-card>
+</template>

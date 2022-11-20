@@ -1,0 +1,13 @@
+<apex:page controller="vfController" docType="html-5.0">
+     <apex:form >
+       
+        
+                    
+                    <apex:inputCheckbox value="{!disableButton}" >
+              <apex:actionSupport event="onchange" action="{!disableButtonMethod}" rerender="pagetable1" >
+                        </apex:actionSupport>
+         </apex:inputCheckbox>
+              
+        <apex:commandButton action="{!submit}" value="Submit" disabled="{!disableButton}" id="pagetable1"/>
+    </apex:form>
+</apex:page>

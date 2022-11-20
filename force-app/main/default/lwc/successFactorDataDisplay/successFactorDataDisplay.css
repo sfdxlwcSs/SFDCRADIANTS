@@ -1,0 +1,12 @@
+ul {
+    list-style-type: "→";
+    list-style-position: inside;
+    list-style-image: url(images/bullet.png);
+    color: darkblue;
+    font-stretch: ultra-expanded;
+}
+
+
+/* li {
+    text-decoration: underline;
+} */
