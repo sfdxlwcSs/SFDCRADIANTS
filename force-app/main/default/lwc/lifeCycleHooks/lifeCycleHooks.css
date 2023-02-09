@@ -1,0 +1,9 @@
+.guidance-container {
+    display : var(--modalHeight, 'block');
+    color: brown;
+}
+
+.blink_me{
+    color: crimson;
+}
+  

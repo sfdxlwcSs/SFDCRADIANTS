@@ -4,18 +4,24 @@
   @Author             : Somnath Sharma
   @Group              : 
   @Last Modified By   : Somnath Sharma
-  @Last Modified On   : 2/18/2020, 10:28:21 AM
+  @Last Modified On   : 05-12-2022
   @Modification Log   : 
   Ver       Date            Author      		    Modification
   1.0    2/18/2020   Somnath Sharma     Initial Version
 -->
 <template>
-    <h1>Life Cycle Hooks LWC</h1>
-    <div>rendered call back is not invoked if th variable is not reference in html try removing-{myString} </div>
-    <lightning-button label="Change String" onclick={changeString}>
-    </lightning-button>
-    <!-- myString -{myString} -->
-    <lightning-button label="Remove String" onclick={removeString}>
-    </lightning-button>
-    <c-life-cycle-hooks-child if:true={myString}></c-life-cycle-hooks-child>
+  <h1>Life Cycle Hooks LWC</h1>
+  <div>rendered call back is not invoked if th variable is not reference in html try removing-{myString} </div>
+  <lightning-button label="Change String" onclick={changeString}>
+  </lightning-button>
+  <!-- myString -{myString} -->
+  <lightning-button label="Remove String" onclick={removeString}>
+  </lightning-button>
+  <c-life-cycle-hooks-child if:true={myString}></c-life-cycle-hooks-child>
+  ***********
+  ******
+  Dynamicall Add CSS
+  <h2 onclick={hideDiv} class={blink_me}> <b>Click Me Dynamically set custom CSS properties in LWC?</b></h2>
+  <div data-id="guidance" class="guidance-container"> Hide me?</div>
+  ******
 </template>

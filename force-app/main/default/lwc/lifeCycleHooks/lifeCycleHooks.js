@@ -4,7 +4,7 @@
  * @Author             : Somnath Sharma
  * @Group              : 
  * @Last Modified By   : Somnath Sharma
- * @Last Modified On   : 2/18/2020, 3:58:43 PM
+ * @Last Modified On   : 05-12-2022
  * @Modification Log   : 
  * Ver       Date            Author      		    Modification
  * 1.0    2/18/2020   Somnath Sharma     Initial Version
@@ -63,6 +63,10 @@ export default class LifeCycleHooks extends LightningElement {
             this.INIT_DONE = true;
         }
 
+    }
+    hideDiv() {
+        const element = this.template.querySelector('[data-id="guidance"]');
+        element.style.setProperty('--modalHeight', 'none');
     }
 
 }
