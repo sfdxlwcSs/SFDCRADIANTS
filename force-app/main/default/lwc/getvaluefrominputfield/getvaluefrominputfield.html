@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : Somnath Sharma
+  @group             : 
+  @last modified on  : 09-02-2023
+  @last modified by  : Somnath Sharma
+-->
+<template>
+    <div
+        class="slds-p-top_small slds-p-bottom_medium slds-align_absolute-center slds-theme_default slds-text-heading_medium">
+        <b>Lightning-Input Example</b>
+    </div>
+    <div class="slds-box slds-theme_default">
+        <lightning-input type="email" label="Email Address" value={emailvalue} onchange={handleEmailChange}>
+        </lightning-input>
+        <lightning-input type="tel" name="mobile" label="Mobile" value={mobilevalue} onchange={handleMobileChange}>
+        </lightning-input>
+        <div class="slds-m-top_small slds-align_absolute-center">
+            <lightning-button variant="Neutral" label="GetValue" class="slds-m-left_x-small" onclick={handleClick}>
+            </lightning-button>
+        </div>
+    </div>
+</template>
