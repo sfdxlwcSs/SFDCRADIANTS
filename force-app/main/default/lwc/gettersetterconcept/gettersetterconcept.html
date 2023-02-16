@@ -2,13 +2,19 @@
   @description       : 
   @author            : Somnath Sharma
   @group             : 
-  @last modified on  : 08-02-2023
+  @last modified on  : 17-02-2023
   @last modified by  : Somnath Sharma
 -->
 <template>
-  <h1>Getter Setter To execute logic each time a public property is set, write a custom setter.
+  <h1 style="font-weight: bold;
+  font-size: 3em;">Concept Of Getter and Setter</h1>
 
-    If you write a setter for a public property, you must also write a getter. Annotate either the getter or the
-    setter with @api, but not both. It’s a best practice to annotate the getter.</h1>
-  <c-getter-setter-child></c-getter-setter-child>
+  <h2 style="color:red;text-transform: uppercase;"> To execute logic each time a public property is set, write a
+    custom setter.</h2>
+  <b> The utility of getters, if we want to display the result of expression we can use getters as
+    HTML doesn’t know to allow to compute an expression on the go.</b>
+  If you write a setter for a public property, you must also write a getter. Annotate either the getter or the
+  setter with @api, but not both. It’s a best practice to annotate the getter.
+  </br>
+  <c-getter-setter-child parent-data={superHeroes}></c-getter-setter-child>
 </template>
