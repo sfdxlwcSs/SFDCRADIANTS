@@ -22,13 +22,23 @@ The invoke() method executes every time the quick action is triggered.**/
             message: 'Hi there! Starting...',
         });
         this.dispatchEvent(event);
-        this[NavigationMixin.Navigate]({
-            type: 'standard__objectPage',
-            attributes: {
-                objectApiName: 'Contact',
-                actionName: 'home',
-            },
-        });
+        // this[NavigationMixin.Navigate]({
+        //     type: 'standard__objectPage',
+        //     attributes: {
+        //         objectApiName: 'Contact',
+        //         actionName: 'home',
+        //     },
+        // });
+    }
+
+    connectedCallback() {
+        console.log("Connected");
+        alert('I am called when the page loads but invoke will get called when u click on the quick action button');
+    }
+    renderedCallback() {
+        // every change will call me remmber
+        //but i will have h1
+        alert('renderedcallback called');
     }
 
 
