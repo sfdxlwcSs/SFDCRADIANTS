@@ -4,7 +4,7 @@
  * @Author             : Somnath Sharma
  * @Group              : 
  * @Last Modified By   : Somnath Sharma
- * @Last Modified On   : 20/2/2020, 11:00:41 pm
+ * @Last Modified On   : 13-03-2023
  * @Modification Log   : 
  * Ver       Date            Author      		    Modification
  * 1.0    1/20/2020   Somnath Sharma     Initial Version
@@ -45,12 +45,12 @@ export default class TableHeadFilter extends LightningElement {
         this.dropdownAlignmentValue = this.dropdownAlignmentTop ? 'bottom-left' : 'auto';
 
         if (this.lwcConfig.getDataFromServer) {
-            window.console.log(this.comboBoxLabel);
-            window.console.time("Std server lwc processing");
+            console.log(this.comboBoxLabel);
+            console.time("Std server lwc processing");
             this.processConfig();
             window.console.timeEnd("Std server lwc processing");
         } else if (this.rowsData.length > 0) {
-            window.console.log('DATA-INJECTION-FROM-CALLING-COMPONENT---->>>>>' + this.rowsData.length);
+            console.log('DATA-INJECTION-FROM-CALLING-COMPONENT---->>>>>' + this.rowsData.length);
             this.setOptions(this.rowsData);
         }
 
@@ -69,11 +69,11 @@ export default class TableHeadFilter extends LightningElement {
     queryRows() {
 
         getDataBasedOnSobject({
-                sobjectName: this.lwcConfig.sObjectApiName,
-                whereClause: this.lwcConfig.whereClause,
-                orderByClause: this.lwcConfig.orderByClause,
-                limitClause: this.lwcConfig.limitClause
-            })
+            sobjectName: this.lwcConfig.sObjectApiName,
+            whereClause: this.lwcConfig.whereClause,
+            orderByClause: this.lwcConfig.orderByClause,
+            limitClause: this.lwcConfig.limitClause
+        })
             .then(result => {
                 //window.console.log('LwcDataFromCallingCmpServer---->>>>>' + JSON.stringify(result));
                 this.setOptions(result);
@@ -86,11 +86,11 @@ export default class TableHeadFilter extends LightningElement {
     getPickListValues() {
 
         getPickListValueBasedOnSobject({
-                sobjectAPI: this.lwcConfig.sObjectApiName,
-                pickListFieldAPI: this.lwcConfig.pickListFieldAPI
-            })
+            sobjectAPI: this.lwcConfig.sObjectApiName,
+            pickListFieldAPI: this.lwcConfig.pickListFieldAPI
+        })
             .then(result => {
-                window.console.log('get picklist values---->>>>>');
+                console.log('get picklist values---->>>>>');
                 //  window.console.log('LwcPicklistDataFromCallingCmp---->>>>>' + JSON.stringify(result));
                 this.setOptions(result);
             })
@@ -111,7 +111,7 @@ export default class TableHeadFilter extends LightningElement {
                 value: isQueryRows ? row.Id : row,
             });
         });
-        window.console.log('->>>>>>length of array-->>>>>>>' + this.options.length);
+        //window.console.log('->>>>>>length of array-->>>>>>>' + this.options.length);
 
     }
     //render the component after all the processing is done
@@ -123,8 +123,8 @@ export default class TableHeadFilter extends LightningElement {
     handleChange(event) {
 
         let selectedOption = this.options.find(item => item.value === event.detail.value);
-        window.console.log('dropdownlabel', selectedOption.label);
-        window.console.log('dropdownValue', event.detail.value);
+        console.log('dropdownlabel', selectedOption.label);
+        console.log('dropdownValue', event.detail.value);
         let filters = {
             selectedvalue: event.detail.value,
             selectedLableValue: selectedOption.label,

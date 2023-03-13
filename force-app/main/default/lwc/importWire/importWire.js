@@ -1,10 +1,10 @@
 /**
  * @File Name          : importWire.js
- * @Description        : 
+ * @Description        : Use of refreshApex and Syntax for wired functions
  * @Author             : Somnath Sharma
  * @Group              : 
  * @Last Modified By   : Somnath Sharma
- * @Last Modified On   : 2/21/2020, 11:32:34 AM
+ * @Last Modified On   : 13-03-2023
  * @Modification Log   : 
  * Ver       Date            Author      		    Modification
  * 1.0    2/21/2020   Somnath Sharma     Initial Version
