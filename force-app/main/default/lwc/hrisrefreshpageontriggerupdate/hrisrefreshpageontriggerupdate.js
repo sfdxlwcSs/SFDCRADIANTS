@@ -44,6 +44,7 @@ export default class Hrisrefreshpageontriggerupdate extends LightningElement {
 
         // Callback invoked whenever a new event message is received
         const messageCallback = (response) => {
+            //this gets called many times
             console.log('New message received: ', JSON.stringify(response));
             this.processChangeEvent(response);
             // Response contains the payload of the new message received

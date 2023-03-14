@@ -6,6 +6,8 @@
   @last modified by  : Somnath Sharma
 -->
 <template>
-    <h1>The lightning/empApi module is supported in desktop browsers with web worker or shared worker support. It is not
-        supported in the Salesforce mobile app.</h1>
+  <h1>The lightning/empApi module is supported in desktop browsers with web worker or shared worker support. It is not
+    supported in the Salesforce mobile app.</h1>
+  <b style="color:red">Note:subscribe method gets called when componet gets called on UI during page load</b>
+  if u comment notifyRecordUpdateAvailable then New message received log will not be logged multiple times.
 </template>
