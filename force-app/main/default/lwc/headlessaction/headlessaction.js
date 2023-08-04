@@ -2,8 +2,8 @@
  * @description       : 
  * @author            : Somnath Sharma
  * @group             : 
- * @last modified on  : 24-02-2023
- * @last modified by  : Somnath Sharma
+ * @last modified on  : 07-28-2023
+ * @last modified by  : SOMNATH SHARMA
 **/
 import { LightningElement, api } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
@@ -16,7 +16,7 @@ export default class Headlessaction extends NavigationMixin(LightningElement) {
 In your Lightning web component, expose invoke() as a public method. 
 The invoke() method executes every time the quick action is triggered.**/
     @api invoke() {
-        console.log("Hi, I'm an action.");
+        console.log("Hi, I'm an action. INVOKE HEADLESS");
         let event = new ShowToastEvent({
             title: 'I am a headless action!',
             message: 'Hi there! Starting...',
@@ -32,13 +32,13 @@ The invoke() method executes every time the quick action is triggered.**/
     }
 
     connectedCallback() {
-        console.log("Connected");
-        alert('I am called when the page loads but invoke will get called when u click on the quick action button');
+        console.log("Connected will not get called ");
+        alert('-headless action LWC-I am called when the page loads in nomral case, but invoke will get called when u click on the quick action button');
     }
     renderedCallback() {
-        // every change will call me remmber
+        // every change will call me remmember
         //but i will have h1
-        alert('renderedcallback called');
+        alert('renderedcallback called-headless');
     }
 
 

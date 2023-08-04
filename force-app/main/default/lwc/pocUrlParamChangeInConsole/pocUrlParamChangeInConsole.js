@@ -1,20 +1,27 @@
-import { LightningElement, wire,api } from 'lwc';
+/**
+ * @description       : 
+ * @author            : Somnath Sharma
+ * @group             : 
+ * @last modified on  : 06-04-2023
+ * @last modified by  : Somnath Sharma
+**/
+import { LightningElement, wire, api } from 'lwc';
 import { CurrentPageReference, NavigationMixin } from 'lightning/navigation';
 export default class PocUrlParamChangeInConsole extends NavigationMixin(LightningElement) {
 
-    currentPageReference = null; 
+    currentPageReference = null;
     urlStateParameters = null;
 
-  
-     @wire(CurrentPageReference)
+
+    @wire(CurrentPageReference)
     getStateParameters(currentPageReference) {
-       if (currentPageReference) {
-          this.urlStateParameters = currentPageReference.state;
-          console.log('url Param'+JSON.stringify(this.urlStateParameters));
-        //  this.setParametersBasedOnUrl();
-       }
+        if (currentPageReference) {
+            this.urlStateParameters = currentPageReference.state;
+            console.log('url Param' + JSON.stringify(this.urlStateParameters));
+            //  this.setParametersBasedOnUrl();
+        }
     }
-    
+
 
     connectedCallback() {
 
@@ -28,13 +35,13 @@ export default class PocUrlParamChangeInConsole extends NavigationMixin(Lightnin
         console.log(' pathname => ' + window.location.pathname);
         console.log(' hashpathname => ' + window.location.hash);
         console.log(' search=> ' + window.location.search);
-        
+
 
     }
 
     renderedCallback() {
-        alert(1);
-       //this._pathname=window.location.pathname;
+        console.log('rendered called');
+        //this._pathname=window.location.pathname;
     }
-  
+
 }

@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : Somnath Sharma
+  @group             : 
+  @last modified on  : 17-05-2023
+  @last modified by  : Somnath Sharma
+-->
+<template>
+    <div class="slds-box">
+        <lightning-card title={badgeLabel} icon-name="standard:contact_list">
+            <div class="slds-var-m-around_medium">
+                <template lwc:if={showData}>
+                    <lightning-datatable key-field="Id" data={contacts} columns={columns} onsave={handleSave}
+                        draft-values={draftValues}>
+                    </lightning-datatable>
+                </template>
+                <template lwc:if={errorSearch}>
+                    <!-- handle Apex error -->
+                </template>
+            </div>
+            <div slot="footer">
+                <lightning-badge label={badgeLabel}></lightning-badge>
+            </div>
+        </lightning-card>
+    </div>
+</template>

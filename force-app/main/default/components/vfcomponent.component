@@ -1,0 +1,14 @@
+<apex:component controller="ButtonActionController" >
+    <apex:form >
+    <apex:pageBlock title="Update Account Information">
+<apex:messages />
+<apex:pageBlockSection columns="1">
+<apex:inputField value="{!account.name}"/>
+<apex:inputField value="{!account.type}"/>
+<apex:inputField value="{!account.accountsource}"/>
+<apex:commandButton action="{!save}" value="save"/>
+</apex:pageBlockSection>
+</apex:pageBlock> 
+</apex:form>
+
+</apex:component>

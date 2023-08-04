@@ -2,22 +2,30 @@
   @description       : 
   @author            : Somnath Sharma
   @group             : 
-  @last modified on  : 24-02-2023
-  @last modified by  : Somnath Sharma
+  @last modified on  : 07-27-2023
+  @last modified by  : SOMNATH SHARMA
 -->
 <template>
 
     A screen quick action opens a Lightning web component in a modal window. To close the modal window programmatically,
     for example, to create a Cancel button, build UI that dispatches the custom event CloseActionScreenEvent. Import the
     event from the lightning/actions module.
-    <lightning-quick-action-panel header="My action">
+    <lightning-quick-action-panel header="Edit Fields Action">
         <p>These two fields are auto-populated based on the record context:</p>
-        <p>RecordId: <i>{recordId}</i>, objectApiName: <i>{objectApiName}</i></p>
+        <p>RecordId: ******<i>{recordId}</i>, ***********objectApiName: <i>{objectApiName}</i></p>
         <p>{pageRefString}</p>
+        <lightning-record-edit-form record-id={recordId}
+        object-api-name={objectApiName}
+        onsuccess={handleSuccess}>
+<lightning-input-field field-name="Name"></lightning-input-field>
+<lightning-input-field field-name="Phone"></lightning-input-field>
+<!-- <lightning-button variant="neutral" label="Cancel"></lightning-button> -->
+<!-- <lightning-button variant="brand" class="slds-m-left_x-small" label="Save" type="submit"></lightning-button> -->
 
-        <div slot="footer">
+        <!-- <div slot="footer"> -->
             <lightning-button variant="neutral" label="Close Modal" onclick={closeModal}></lightning-button>
-            <lightning-button variant="brand" label="Save" class="slds-m-left_x-small"></lightning-button>
-        </div>
+            <lightning-button variant="brand" label="Save" class="slds-m-left_x-small" type="submit"></lightning-button>
+        <!-- </div> -->
+    </lightning-record-edit-form>
     </lightning-quick-action-panel>
 </template>

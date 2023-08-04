@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Somnath Sharma
  * @group             : 
- * @last modified on  : 14-03-2023
+ * @last modified on  : 10-07-2023
  * @last modified by  : Somnath Sharma
 **/
 import { LightningElement, api } from 'lwc';
@@ -14,7 +14,8 @@ import {
     isEmpEnabled,
 } from 'lightning/empApi';
 import { notifyRecordUpdateAvailable } from 'lightning/uiRecordApi';
-//Indicates what point in the stream to replay events from. Specify -1 to get new events from the tip of the stream, -2 to replay from the last saved event, or a specific event replay ID to get all saved and new events after that ID.
+//Indicates what point in the stream to replay events from. Specify -1 to get new events from the tip of the stream,
+// -2 to replay from the last saved event, or a specific event replay ID to get all saved and new events after that ID.
 const replayId = -1;
 
 export default class Hrisrefreshpageontriggerupdate extends LightningElement {
@@ -69,6 +70,11 @@ export default class Hrisrefreshpageontriggerupdate extends LightningElement {
     processChangeEvent(changeEvent) {
         try {
             this.recordId = changeEvent.data.payload.RecordId__c;
+            // Informs Lightning Data Service that record data has changed so that Lightning Data Service can take 
+            // the appropriate actions to keep wire adapters updated with the latest record data. 
+            // Call this function to notify Lightning Data Service that a record has changed outside
+            //  its mechanisms, such as via imperative Apex or by calling User Interface API via a third-party framework. 
+            // This function supersedes getRecordNotifyChange(recordIds).
             notifyRecordUpdateAvailable([{ recordId: this.recordId }]);
 
         } catch (err) {
