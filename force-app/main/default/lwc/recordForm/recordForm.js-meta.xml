@@ -2,7 +2,7 @@
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>53.0</apiVersion>
     <isExposed>true</isExposed>
-    <masterLabel>Record Form</masterLabel>
+    <masterLabel>Dynamic Interactions</masterLabel>
     <targets>
         <target>lightning__AppPage</target>
     </targets>

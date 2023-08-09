@@ -3,8 +3,8 @@
  * @Description        : 
  * @Author             : Somnath Sharma
  * @Group              : 
- * @Last Modified By   : Somnath Sharma
- * @Last Modified On   : 3/28/2020, 2:50:39 PM
+ * @Last Modified By   : SOMNATH SHARMA
+ * @Last Modified On   : 08-09-2023
  * @Modification Log   : 
  * Ver       Date            Author      		    Modification
  * 1.0    26/1/2020   Somnath Sharma     Initial Version
@@ -26,6 +26,7 @@ export default class LwcLookUps extends LightningElement {
     @api lookupfieldname = '';
     //For fields  parameters of getRecord , specify field names in the format ObjectApiName.FieldName 
     @api lookupfield_objectapiname_fieldname = [];
+    @api recordId;
 
     handleChange(event) {
         /*once you have this value it can be passed to apex as one of the method params ,
@@ -40,8 +41,9 @@ export default class LwcLookUps extends LightningElement {
     }
     handleLoad(event) {
         //details coming on the load of form
-        const recUi = event.detail;
-        //console.log("OnLoadData-", JSON.stringify(recUi));
+        const recUi = event.detail
+        console.log('OnLoadData-fields', JSON.stringify(recUi.records[this.recordId].fields.Name.value));
+        //  this.accountName=recUi.records[this.recordId].fields.Name.value;
 
     }
     //get lookup field display value for use

@@ -1,0 +1,20 @@
+<!--
+  @description       : 
+  @author            : SOMNATH SHARMA
+  @group             : 
+  @last modified on  : 08-08-2023
+  @last modified by  : SOMNATH SHARMA
+-->
+<template>
+    <lightning-card title="LWC Subscriber">
+        <p class="slds-p-horizontal_small">
+                <lightning-record-form
+                    record-id={accountId}
+                    object-api-name={objectApiName}
+                    fields={fields}
+                    columns="2"
+                    mode="view">
+            </lightning-record-form>
+        </p>
+    </lightning-card>
+</template>
