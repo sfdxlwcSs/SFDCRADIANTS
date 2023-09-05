@@ -1,9 +1,10 @@
 /**
-* @description       : Example to learn differen trigger context ,remmber this can be optimzed in terms of for loop
+* @description       : Example to learn differen trigger context ,
+remmember this can be optimzed in terms of for loop
 * @author            : Somnath Sharma
 * @group             : 
-* @last modified on  : 06-04-2023
-* @last modified by  : Somnath Sharma
+* @last modified on  : 08-11-2023
+* @last modified by  : SOMNATH SHARMA
 **/
 trigger ProjectTrigger on Project__c (before insert,before delete, before update, 
           after insert, after update, after delete, after undelete) 

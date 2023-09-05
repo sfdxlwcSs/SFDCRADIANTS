@@ -4,8 +4,8 @@
  The trigger should throw an error.
 * @author            : Somnath Sharma
 * @group             : 
-* @last modified on  : 11-19-2021
-* @last modified by  : Somnath Sharma
+* @last modified on  : 08-11-2023
+* @last modified by  : SOMNATH SHARMA
 **/
 trigger avoiduplicate  on Contact (before insert) {
     
@@ -30,9 +30,9 @@ trigger avoiduplicate  on Contact (before insert) {
     //duplicate exists
     if(!existingDbLeads.isEmpty()) { 
         for(Contact c:Trigger.New){
-            if(emailPerLeadCount.containsKey(c.Email)){
+           // if(emailPerLeadCount.containsKey(c.Email)){
                 c.Email.addError('Duplicate Contact With Email present in System --**'+c.Email);
-            }
+           // }
            
         } 
     }
