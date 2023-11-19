@@ -1,7 +1,14 @@
 import { LightningElement, wire } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
+import { ShowToastEvent } from "lightning/platformShowToastEvent";
+import { deleteRecord } from "lightning/uiRecordApi";
+import { encodeDefaultFieldValues } from "lightning/pageReferenceUtils";
 import searchResultsData from '@salesforce/apex/SpeechToTextSearch.searchResults';
+import { refreshApex } from '@salesforce/apex';
+
+const STRINGNOTFOUND = 'Word not found in the input string';
 export default class BasicSpeechSynthesis extends NavigationMixin(LightningElement) {
+
 
 
    testvalue = "Press Enter hear it.";
@@ -13,7 +20,7 @@ export default class BasicSpeechSynthesis extends NavigationMixin(LightningEleme
    _speechDBLead = [];
    _showSpinner = false;
    _recognition;
-
+   defaultValues = {};
 
 
    connectedCallback() {
@@ -50,21 +57,59 @@ export default class BasicSpeechSynthesis extends NavigationMixin(LightningEleme
    //Extract the text results and add it to the Chatter.
    handleSpeechRecognized(msg) {
 
-      let createAccount = 'Create Account';
-      let createContact = 'Create Contact';
       this.searchKey = msg;
+      let userProvidedDefaultName = '';
+      let keyWordsArr = ['Create Account', 'Create Contact'];
+      keyWordsArr.forEach((ele, index) => {
+         console.log('index-->', index);
+         let extracted_word = this.getTextAfterWord(this.searchKey.toLowerCase(), ele.toLocaleLowerCase())
+         if (extracted_word != STRINGNOTFOUND) {
+            userProvidedDefaultName = extracted_word;
 
-      if (msg.toLowerCase() === createAccount.toLocaleLowerCase()) {
-         this.navigateToCreatePage('Account');
+            return;
+         }
+      });
+      console.log(userProvidedDefaultName);
+      if (msg.toLowerCase().includes(keyWordsArr[0].toLocaleLowerCase())) {
+         this.defaultValues['Name'] = userProvidedDefaultName;
+         this.navigateToCreatePage('Account', this.navigateToAccountWithDefaults(this.defaultValues));
       }
-      else if (msg.toLowerCase() === createContact.toLocaleLowerCase()) {
-         this.navigateToCreatePage('Contact');
+      else if (msg.toLowerCase().includes(keyWordsArr[1].toLocaleLowerCase())) {
+         this.defaultValues['LastName'] = userProvidedDefaultName;
+         this.navigateToCreatePage('Contact', this.navigateToNewContactWithDefaults(this.defaultValues));
       }
       else {
          this.handleKeyChange(msg);
       }
 
+   }
 
+
+   navigateToAccountWithDefaults(defaultValues) {
+      const userProvideddefaultValues = encodeDefaultFieldValues({
+         Name: defaultValues['Name'],
+
+      });
+      console.log(userProvideddefaultValues);
+      return userProvideddefaultValues;
+
+   }
+   navigateToNewContactWithDefaults(defaultValues) {
+      const userProvideddefaultValues = encodeDefaultFieldValues({
+         LastName: defaultValues['LastName'],
+      });
+      console.log(userProvideddefaultValues);
+      return userProvideddefaultValues;
+   }
+
+
+   getTextAfterWord = (inputString, specifiedWord) => {
+      const index = inputString.indexOf(specifiedWord);
+      if (index !== -1) {
+         return inputString.substring(index + specifiedWord.length + 1);
+      } else {
+         return STRINGNOTFOUND;
+      }
    }
 
    handleKeyChange(msg) {
@@ -91,7 +136,7 @@ export default class BasicSpeechSynthesis extends NavigationMixin(LightningEleme
 
    handleClickToStop(event) {
 
-      this._recognition.abort();
+      this._recognition.stop();
       console.log("Speech recognition has stopped.");
    }
 
@@ -162,6 +207,52 @@ export default class BasicSpeechSynthesis extends NavigationMixin(LightningEleme
       }
    }
 
+   handleDelete(event) {
+      console.log(event.currentTarget.dataset.recname);
+      console.log();
+      switch (event.currentTarget.dataset.recname) {
+         case 'Account':
+            this.handleDeleteRec(event.currentTarget.dataset.accid, 'Account');
+            break;
+         case 'Contact':
+            //   this.navigateToCreatePage('Contact');
+            break;
+         case 'Opportunity':
+            //  this.navigateToCreatePage('Opportunity');
+            break;
+         case 'Lead':
+            //   this.navigateToCreatePage('Lead');
+            break;
+         default:
+         // code block
+      }
+   }
+
+
+   handleDeleteRec(_recId, sObjectName) {
+      deleteRecord(_recId)
+         .then(() => {
+            this.dispatchEvent(
+               new ShowToastEvent({
+                  title: "Success",
+                  message: "Record deleted",
+                  variant: "success",
+               }),
+            );
+            refreshApex(this._speechDBResults);
+         })
+         .catch((error) => {
+            this.dispatchEvent(
+               new ShowToastEvent({
+                  title: "Error deleting record",
+                  message: JSON.stringify(error),
+                  variant: "error",
+               }),
+            );
+         });
+   }
+
+
    handleEnter(event) {
       // on press of enter synthesis should start
       if (event.keyCode === 13) {
@@ -175,12 +266,15 @@ export default class BasicSpeechSynthesis extends NavigationMixin(LightningEleme
    }
 
    // Navigate to New Account Page
-   navigateToCreatePage(sObjectName) {
+   navigateToCreatePage(sObjectName, defaultValues) {
       this[NavigationMixin.Navigate]({
          type: 'standard__objectPage',
          attributes: {
             objectApiName: sObjectName,
             actionName: 'new'
+         },
+         state: {
+            defaultFieldValues: defaultValues,
          },
       });
    }
