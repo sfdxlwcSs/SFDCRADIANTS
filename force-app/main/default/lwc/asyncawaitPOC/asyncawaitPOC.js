@@ -18,6 +18,7 @@ connectedCallback() {
 
 // This behavior of pausing execution until the promise is resolved is what allows async/await to provide a more 
 //synchronous-like flow in asynchronous code, making it easier to reason about and write asynchronous JavaScript.
+//so   console.log('came here 0' + JSON.stringify(data)); will be printed first then console.log('Promise resolved code');
 async handleGetAccountsAsyncAwait() {
     try {
         const data = await allAcc();
@@ -28,7 +29,7 @@ async handleGetAccountsAsyncAwait() {
     } finally {
         // Perform any actions needed in the finally block
     }
-    console.log('came here');
+    console.log('Promise resolved code');
 }
 
 //arrow operator syntax
@@ -56,6 +57,7 @@ handleGetContactsAsyncAwait = async () => {
 //Within the .then() block, you can specify the actions to be performed with the resolved data.
 // This could include processing the data, updating UI elements, or triggering subsequent asynchronous operations.
 
+//Please note console.log('Executed before Promise is resolved.'); will be printed first then  console.log('Accounts fetched successfully: ' + JSON.stringify(data)); once promise is resolved
 // Example of .then() Block:
 handlePromise() {
     allAcc()
@@ -68,6 +70,8 @@ handlePromise() {
             // Handle errors if the promise is rejected
             console.error('Error fetching accounts: ' + JSON.stringify(error));
         });
+
+        console.log('Executed before Promise is resolved.');
 }
 
 // Promise Chaining in JavaScript:
@@ -105,6 +109,7 @@ handlePromiseChaining() {
             // Handle errors that occur in any step of the chain
             console.error('Error fetching data: ' + JSON.stringify(error));
         });
+        console.log('Executed before Promise is resolved.');
 }
 
 
