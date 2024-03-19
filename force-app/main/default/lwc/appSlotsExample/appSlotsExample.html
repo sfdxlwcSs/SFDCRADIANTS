@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : SOMNATH SHARMA
+  @group             : 
+  @last modified on  : 01-02-2024
+  @last modified by  : SOMNATH SHARMA
+-->
+<template>
+    
+        <lightning-card title="EventBubbling Slots" icon-name="standard:logging">
+
+            <lightning-layout class="slds-var-m-around_medium">
+                <lightning-layout-item class="wide">
+                    
+                    <div class='wrapper'>
+                      <c-parent-slot onbuttonclick={handleClickEventFromChild}>
+                          <c-child-slot></c-child-slot>
+                      </c-parent-slot>
+                    </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-card>
+            <footer style="text-align: center;">
+                <b>If a component is passed into a slot, and you want to bubble an event from that component(child slot)
+                 to the template that contains it(appSlotExample), dispatch the event on the host element(parentslot). 
+                The event is visible only in the template that contains your component.</b>
+            </footer>
+</template>

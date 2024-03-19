@@ -15,6 +15,10 @@ public with sharing class demoClass {
     public static List<Account> getAllAccounts(){
         return [Select Id,Name From Account];
     }
+     @AuraEnabled
+    public static List<Contact> getAllContacts(){
+        return [Select Id,Name,AccountId From Contact];
+    }
 
      @AuraEnabled(cacheable=true)
     public static List<Contact> getContactList(){
