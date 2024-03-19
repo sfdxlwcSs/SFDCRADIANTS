@@ -18,25 +18,26 @@ connectedCallback() {
 
 // This behavior of pausing execution until the promise is resolved is what allows async/await to provide a more 
 //synchronous-like flow in asynchronous code, making it easier to reason about and write asynchronous JavaScript.
-//so   console.log('came here 0' + JSON.stringify(data)); will be printed first then console.log('Promise resolved code');
+//so   console.log('came here first' + JSON.stringify(data)); will be printed first then
+// console.log('Executed after Promise resolved ');
 async handleGetAccountsAsyncAwait() {
     try {
         const data = await allAcc();
-        console.log('came here 0' + JSON.stringify(data));
+        console.log('came here first' + JSON.stringify(data));
     } catch (error) {
        console.error('Error fetching accounts: ' + JSON.stringify(error));
         // Handle error if needed
     } finally {
         // Perform any actions needed in the finally block
     }
-    console.log('Promise resolved code');
+    console.log('Executed after Promise resolved ');
 }
 
 //arrow operator syntax
 handleGetContactsAsyncAwait = async () => {
     try {
         const data = await allContacts();
-        console.log('came here 1' + JSON.stringify(data));
+        console.log('came here first' + JSON.stringify(data));
     } catch (error) {
        console.error('Error fetching contacts: ' + JSON.stringify(error));
     } finally {
@@ -57,7 +58,8 @@ handleGetContactsAsyncAwait = async () => {
 //Within the .then() block, you can specify the actions to be performed with the resolved data.
 // This could include processing the data, updating UI elements, or triggering subsequent asynchronous operations.
 
-//Please note console.log('Executed before Promise is resolved.'); will be printed first then  console.log('Accounts fetched successfully: ' + JSON.stringify(data)); once promise is resolved
+//Please note console.log('Executed before Promise is resolved.'); will be printed first then 
+// console.log('Accounts fetched successfully: ' + JSON.stringify(data)); once promise is resolved
 // Example of .then() Block:
 handlePromise() {
     allAcc()
@@ -98,7 +100,7 @@ handlePromiseChaining() {
             // Process account data or perform actions
             console.log('Accounts fetched successfully: ' + JSON.stringify(accountResults));
             // Return a new promise (result of allContacts) to continue the chain
-            return allContacts({});
+            return allContacts({}); //{} pass params here for the apex function or result from allAcc call
         })
         .then((contactResults) => {
             // Process contact data or perform actions
