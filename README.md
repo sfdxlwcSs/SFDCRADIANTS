@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Somnath Sharma</h1>
-<h3 align="center">Salesforce Developer || Lightning App Dev Champion || LWC || Flows || Blogger || Solution Designer || Apex</h3>
+<h3 align="center">Salesforce Lead | 10+ Years Experience | Blogger | LWC & Apex Specialist | CI/CD Advocate | Lightning App Dev Champion | Flow Designer | Platform Developer II Certified | Digital Transformation Specialist</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=sfdxlwcss&label=Profile%20views&color=0e75b6&style=flat" alt="sfdxlwcss" /> </p>
 
