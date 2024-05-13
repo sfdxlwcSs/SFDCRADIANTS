@@ -1,0 +1,18 @@
+<template>
+    <div class="slds-text-align_center slds-m-bottom_medium">
+        <h1 class="slds-text-color_brand slds-text-heading_large">Bulk API Pagination</h1>
+    </div>
+    <lightning-card>
+        <template if:true={accRecsWrapper}>
+            <lightning-datatable
+                key-field="index"
+                data={accRecsWrapper}
+                columns={columns}>
+            </lightning-datatable>
+            <div class="slds-align_absolute-center slds-m-top_medium">
+                <lightning-button label="Previous" onclick={previous} disabled={disablePrevious}></lightning-button>
+                <lightning-button label="Next" onclick={next}></lightning-button>
+            </div>
+        </template>
+    </lightning-card>
+</template>

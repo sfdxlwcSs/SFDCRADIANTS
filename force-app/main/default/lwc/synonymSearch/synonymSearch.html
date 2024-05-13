@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Synonym Search">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Enter a word" value={searchWord} onchange={handleInputChange}></lightning-input>
+            <template if:true={synonyms}>
+                <ol>
+                    <template for:each={synonyms} for:item="synonym" for:index="index">
+                        <li key={synonym.word}>
+                            {index}. <b>{synonym}</b> 
+                        </li>
+                    </template>
+                </ol>
+            </template>
+            <template if:true={error}>
+                <p>{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

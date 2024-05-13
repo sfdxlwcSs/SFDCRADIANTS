@@ -1,0 +1,23 @@
+<apex:page controller="BulkAPIPagination" action="{!queryAccRecs}">
+    
+      <div style="text-align: center; margin-bottom: 20px;">
+        <h1 style="color: #336699; font-size: 24px;">Bulk API Pagination</h1>
+    </div>
+    <apex:pageBlock id="refreshSection">
+        <apex:pageBlockTable value="{!accRecsWrapper}" var="accRec" >
+            <apex:column headerValue="Record Index" value="{!accRec.index}"></apex:column>
+            <apex:column headerValue="Name" value="{!accRec.recordName}"></apex:column>
+             <apex:column headerValue="Type" value="{!accRec.Type}"></apex:column>
+             <apex:column headerValue="Industry" value="{!accRec.Industry}"></apex:column>
+             <apex:column headerValue="Rating" value="{!accRec.Rating}"></apex:column>
+        </apex:pageBlockTable>	
+    </apex:pageBlock>
+   <apex:form >
+     
+    <div style="text-align: center; margin-top: 10px;">
+        <apex:commandButton value="Previous" action="{!Previous}"  rerender="refreshSection"/>
+        <span style="margin: 0 10px;"></span> 
+        <apex:commandButton value="Next" action="{!Next}" rerender="refreshSection"/>
+    </div>
+</apex:form>
+</apex:page>
