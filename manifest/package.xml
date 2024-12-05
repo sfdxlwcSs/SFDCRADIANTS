@@ -25,9 +25,17 @@
 		<name>AuraDefinitionBundle</name>
 	</types>
 	<types>
+		<members>salesforcejwt</members>
+		<name>Certificate</name>
+	</types>
+	<types>
 		<members>RecordRefreshEvent__e.RecordId__c</members>
 		<members>RecordRefreshEvent__e.sObject__c</members>
 		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Security_Key.Private_Key</members>
+		<name>CustomMetadata</name>
 	</types>
 	<types>
 		<members>RecordRefreshEvent__e</members>
@@ -37,6 +45,5 @@
 		<members>*</members>
 		<name>LightningComponentBundle</name>
 	</types>
-	
-	<version>56.0</version>
+	<version>62.0</version>
 </Package>

@@ -39,13 +39,11 @@ public class BulkAPIPagination {
            // System.debug('Response--> '+response.getBody());
             String body=response.getBody();
             nextlocator=response.getHeader('Sforce-Locator');
-            
             formatResponse(body);
             
         }
       
     }
-    
     
     public  void Next(){
          clickTracker=clickTracker+1;
