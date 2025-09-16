@@ -46,17 +46,18 @@ public class JWTGenerator {
         System.debug('Access Token✈-->'+accessToken);
                 System.debug('getJWS() Token✈-->'+bearer.getJWS());
         System.debug('getHttpResponse()🚀-->'+bearer.getHttpResponse());
-                fetchAccountDetails(accessToken);
+         String END_POINT = 'https://somnathintegrationorg2-dev-ed.develop.my.salesforce.com';
+                fetchAccountDetails(accessToken,END_POINT);
      return token;
         
         
     }
     
-     public static void fetchAccountDetails(String accessToken) {
+     public static void fetchAccountDetails(String accessToken,String END_POINT) {
        
         String accountId = '0015j00001UrtSjAAJ';
         
-        HttpResponse response = AccountInfoFetcher.getAccountInfo(accessToken, accountId);
+        HttpResponse response = AccountInfoFetcher.getAccountInfo(accessToken, accountId,END_POINT);
        
     }
 }

@@ -1,12 +1,12 @@
 public class AccountInfoFetcher {
-    public static final String END_POINT = 'https://somnathintegrationorg2-dev-ed.develop.my.salesforce.com';
+   // public static final String END_POINT = 'https://somnathintegrationorg2-dev-ed.develop.my.salesforce.com';
     
-    public static HttpResponse getAccountInfo(String accessToken, String accountId) {
+    public static HttpResponse getAccountInfo(String accessToken, String accountId,String endpoint) {
         Http http = new Http();
         HttpRequest request = new HttpRequest();
         
         // Set the endpoint URL
-        String url = END_POINT + '/services/data/v54.0/sobjects/Account/' + accountId;
+        String url = endpoint + '/services/data/v54.0/sobjects/Account/' + accountId;
         request.setEndpoint(url);
         
         // Set the method to GET
