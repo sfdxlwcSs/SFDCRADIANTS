@@ -7,7 +7,7 @@ public class JWTGeneratorDover {
     public static String generateJWT() {
         Auth.JWT jwt = new Auth.JWT();
         //USERNAME FROM TARGET ORG
-        jwt.setSub('ssharma4@dovercorp.com.hr.miaw'); //MIAW Org is the Resource/Target Server and 
+        jwt.setSub('ssharma4@dovercorp.com.hr.miaw'); //MIAW Org is the Resource/Target ORG and 
         //LWC org is the requesting/Source Server
         jwt.setAud('https://test.salesforce.com');
         //This is the Consumer Key from the Connected App that you created in the target ("MIAW") org. It uniquely identifies your source application.
