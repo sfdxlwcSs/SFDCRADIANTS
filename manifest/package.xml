@@ -25,6 +25,10 @@
 		<name>AuraDefinitionBundle</name>
 	</types>
 	<types>
+		<members>*</members>
+		<name>AuthProvider</name>
+	</types>
+	<types>
 		<members>salesforcejwt</members>
 		<name>Certificate</name>
 	</types>
@@ -42,8 +46,20 @@
 		<name>CustomObject</name>
 	</types>
 	<types>
+		<members>RefreshTokenFlow</members>
+		<name>ExternalCredential</name>
+	</types>
+	<types>
 		<members>*</members>
 		<name>LightningComponentBundle</name>
 	</types>
-	<version>62.0</version>
+	<types>
+		<members>*</members>
+		<name>NamedCredential</name>
+	</types>
+	<types>
+		<members>RefreshTokenFlowExternalCredential</members>
+		<name>PermissionSet</name>
+	</types>
+	<version>65.0</version>
 </Package>

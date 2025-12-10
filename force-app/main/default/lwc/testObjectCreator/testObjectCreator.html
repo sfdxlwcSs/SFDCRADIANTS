@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Test Object Manager">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Name" value={name} onchange={handleNameChange}></lightning-input>
+            <lightning-input label="Status" value={status} onchange={handleStatusChange}></lightning-input>
+            <lightning-button label="Create Record" onclick={createRecord} variant="brand"></lightning-button>
+        </div>
+
+        <template if:true={recordId}>
+            <p class="slds-text-color_success">Record Created! ID: {recordId}</p>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">Error: {error}</p>
+        </template>
+
+        <template if:true={records}>
+            <lightning-card title="Recent Records">
+                <template for:each={records} for:item="rec">
+                    <p key={rec.Id}>{rec.Name} - {rec.Status__c}</p>
+                </template>
+            </lightning-card>
+        </template>
+    </lightning-card>
+</template>

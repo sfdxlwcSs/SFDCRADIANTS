@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <authorizeUrl>https://somnathintegrationtarget-dev-ed.develop.my.salesforce.com/services/oauth2/authorize</authorizeUrl>
+    <consumerKey>3MVG9pRzvMkjMb6m2OUUNA2cEcVUkK41P7gOVoS1L8hrgEkjD3csd1HstLa75Cu2YVG_an_X2CM27oh6Ia5AY</consumerKey>
+    <consumerSecret>Placeholder_Value</consumerSecret>
+    <friendlyName>RefreshTokenAuthProvider</friendlyName>
+    <includeOrgIdInIdentifier>true</includeOrgIdInIdentifier>
+    <isPkceEnabled>false</isPkceEnabled>
+    <providerType>Salesforce</providerType>
+    <requireMfa>false</requireMfa>
+    <sendAccessTokenInHeader>false</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+    <sendSecretInApis>false</sendSecretInApis>
+    <tokenUrl>https://somnathintegrationtarget-dev-ed.develop.my.salesforce.com/services/oauth2/token</tokenUrl>
+</AuthProvider>
